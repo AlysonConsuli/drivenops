@@ -27,8 +27,8 @@ jobs:
           file_name: front-end/.env
           fail_on_empty: true
 
-      - name: Build
-        run: docker-compose build
+      - name: App down
+        run: docker-compose down
 
-      - name: Run
-        run: docker-compose down && docker-compose up -d
+      - name: Build and Run
+        run: docker-compose up -d --build
